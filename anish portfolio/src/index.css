@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Custom Color Palette matching design requirements */
+  --color-brand-cream: #F7F3EE;
+  --color-brand-soft-beige: #E8DDD0;
+  --color-brand-sand: #DCCFC0;
+  --color-brand-mocha: #6A5545;
+  --color-brand-mocha-light: #8A7564;
+  --color-brand-accent: #5C4738;
+  --color-brand-accent-hover: #4A382C;
+  --color-brand-border: #D1C2B1;
+
+  /* Mocha shadow as a custom utility shadow */
+  --shadow-mocha: 0 10px 30px -10px rgba(106, 85, 69, 0.15);
+
+  /* Hover Lift Animation keyframes */
+  --animate-float: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Base styles and defaults */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-brand-cream);
+  color: var(--color-brand-mocha);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  transition: background-color 0.3s ease;
+}
+
+/* Fallback/Custom Classes */
+.serif {
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+.mocha-shadow {
+  box-shadow: var(--shadow-mocha);
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.glass-ish {
+  background: rgba(220, 207, 192, 0.4);
+  backdrop-filter: blur(4px);
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-brand-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-brand-border);
+  border: 3px solid var(--color-brand-cream);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-brand-mocha-light);
+}
+
+/* Custom elegant text selections */
+::selection {
+  background-color: var(--color-brand-accent);
+  color: var(--color-brand-cream);
+}
